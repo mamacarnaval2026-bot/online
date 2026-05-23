@@ -2,19 +2,29 @@
 <html lang="pt-BR">
 <head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18174480287"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-18174480287');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FULL TURBOS AUTO PEÇAS</title>
+<title>Detetive Veicular</title>
 
-<meta name="description" content="Auto peças automotivas com variedade, qualidade e atendimento especializado.">
+<meta name="description" content="Consulta veicular online pela placa com rapidez, praticidade e informações detalhadas.">
 
-<meta name="keywords" content="auto peças, peças automotivas, automóveis, turbo, mecânica, acessórios">
+<meta name="keywords" content="consulta veicular, placa, histórico veicular, detetive veicular, consulta online">
 
 <meta name="robots" content="index, follow">
 
-<meta property="og:title" content="FULL TURBOS AUTO PEÇAS">
-<meta property="og:description" content="Peças automotivas, acessórios e atendimento especializado para seu veículo.">
+<meta property="og:title" content="Detetive Veicular">
+<meta property="og:description" content="Consulte veículos pela placa e descubra informações importantes com facilidade.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,9 +45,14 @@ html{
 
 body{
     font-family:'Inter',sans-serif;
-    background:#0b0b0b;
+    background:#050505;
     color:#ffffff;
     overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
 }
 
 a{
@@ -57,41 +72,43 @@ header{
     left:0;
     width:100%;
     z-index:999;
-    background:rgba(0,0,0,.92);
-    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(5,5,5,.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.05);
 }
 
 .navbar{
-    height:82px;
+    height:84px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    font-size:32px;
+    font-size:34px;
     font-weight:900;
-    color:#ff3d00;
+    letter-spacing:1px;
+    color:#00c853;
 }
 
 .logo span{
-    color:#fff;
+    color:#ffffff;
 }
 
 .menu{
     display:flex;
-    gap:30px;
+    gap:32px;
 }
 
 .menu a{
-    color:#d8d8d8;
+    color:#d7d7d7;
     font-size:15px;
     font-weight:600;
     transition:.3s;
 }
 
 .menu a:hover{
-    color:#ff3d00;
+    color:#00c853;
 }
 
 .btn-primary{
@@ -99,24 +116,28 @@ header{
     align-items:center;
     justify-content:center;
     padding:14px 28px;
-    border-radius:12px;
-    background:#ff3d00;
+    border-radius:14px;
+    background:#00c853;
     color:#fff;
     font-weight:700;
     transition:.3s;
+    border:none;
+    cursor:pointer;
 }
 
 .btn-primary:hover{
-    background:#e63600;
+    background:#00a844;
+    transform:translateY(-2px);
 }
 
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
+    position:relative;
     background:
     linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.8)),
-    url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1800&auto=format&fit=crop') center/cover;
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1800&auto=format&fit=crop') center/cover;
 }
 
 .hero-content{
@@ -128,23 +149,24 @@ header{
     display:inline-block;
     padding:10px 18px;
     border-radius:50px;
-    background:rgba(255,61,0,.15);
-    border:1px solid rgba(255,61,0,.3);
-    color:#ff9a7a;
+    background:rgba(0,200,83,.12);
+    border:1px solid rgba(0,200,83,.25);
+    color:#7dffb0;
     font-size:14px;
-    margin-bottom:24px;
+    font-weight:600;
+    margin-bottom:25px;
 }
 
 .hero h1{
-    font-size:70px;
+    font-size:68px;
     line-height:1.08;
     margin-bottom:24px;
     font-weight:900;
 }
 
 .hero p{
-    color:#d7d7d7;
     font-size:19px;
+    color:#d6d6d6;
     line-height:1.9;
     margin-bottom:42px;
 }
@@ -160,8 +182,8 @@ header{
     align-items:center;
     justify-content:center;
     padding:14px 28px;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.15);
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,.12);
     color:#fff;
     font-weight:700;
     transition:.3s;
@@ -182,7 +204,7 @@ section{
 }
 
 .section-title span{
-    color:#ff3d00;
+    color:#00c853;
     font-size:14px;
     text-transform:uppercase;
     letter-spacing:1px;
@@ -198,7 +220,7 @@ section{
 .section-title p{
     max-width:760px;
     margin:18px auto 0;
-    color:#bdbdbd;
+    color:#bcbcbc;
     line-height:1.8;
 }
 
@@ -209,28 +231,28 @@ section{
 }
 
 .card{
-    background:#141414;
+    background:#101010;
     border:1px solid rgba(255,255,255,.06);
-    border-radius:24px;
     padding:36px;
+    border-radius:24px;
     transition:.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(255,61,0,.4);
+    transform:translateY(-10px);
+    border-color:rgba(0,200,83,.25);
 }
 
 .icon{
     width:70px;
     height:70px;
     border-radius:18px;
-    background:rgba(255,61,0,.12);
+    background:rgba(0,200,83,.12);
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#ff3d00;
-    font-size:28px;
+    color:#00c853;
+    font-size:30px;
     font-weight:800;
 }
 
@@ -245,7 +267,7 @@ section{
 }
 
 .info-section{
-    background:#101010;
+    background:#0a0a0a;
 }
 
 .info-grid{
@@ -255,7 +277,7 @@ section{
 }
 
 .info-box{
-    background:#151515;
+    background:#111111;
     border:1px solid rgba(255,255,255,.06);
     border-radius:24px;
     padding:40px;
@@ -263,12 +285,12 @@ section{
 
 .info-box h3{
     margin-bottom:20px;
-    color:#ff3d00;
+    color:#00c853;
     font-size:24px;
 }
 
 .info-box p{
-    color:#cfcfcf;
+    color:#c9c9c9;
     line-height:1.9;
     margin-bottom:10px;
 }
@@ -280,7 +302,7 @@ section{
 }
 
 .contact-card{
-    background:#151515;
+    background:#111111;
     border:1px solid rgba(255,255,255,.06);
     border-radius:24px;
     padding:38px;
@@ -288,17 +310,17 @@ section{
 
 .contact-card h3{
     margin-bottom:18px;
-    color:#ff3d00;
+    color:#00c853;
 }
 
 .contact-card p{
-    color:#cfcfcf;
+    color:#c9c9c9;
     line-height:1.9;
 }
 
 .form-box{
     margin-top:50px;
-    background:#151515;
+    background:#111111;
     border:1px solid rgba(255,255,255,.06);
     border-radius:28px;
     padding:42px;
@@ -324,7 +346,7 @@ textarea{
     padding:16px;
     border-radius:14px;
     border:1px solid rgba(255,255,255,.08);
-    background:#0b0b0b;
+    background:#050505;
     color:#fff;
     font-size:15px;
     outline:none;
@@ -336,14 +358,14 @@ textarea{
 }
 
 footer{
-    padding:70px 0 30px;
+    padding:80px 0 30px;
     background:#050505;
     border-top:1px solid rgba(255,255,255,.05);
 }
 
 .copy{
     text-align:center;
-    color:#8a8a8a;
+    color:#7f7f7f;
     font-size:14px;
 }
 
@@ -389,284 +411,283 @@ footer{
 
 <header>
 
-    <div class="container navbar">
+<div class="container navbar">
 
-        <div class="logo">
-            FULL <span>TURBOS</span>
-        </div>
+<div class="logo">
+DETETIVE <span>VEICULAR</span>
+</div>
 
-        <nav class="menu">
-            <a href="#sobre">Empresa</a>
-            <a href="#servicos">Produtos</a>
-            <a href="#dados">Dados</a>
-            <a href="#contato">Contato</a>
-        </nav>
+<nav class="menu">
+<a href="#sobre">Empresa</a>
+<a href="#servicos">Serviços</a>
+<a href="#dados">Dados</a>
+<a href="#contato">Contato</a>
+</nav>
 
-        <a href="#contato" class="btn-primary">
-            Atendimento
-        </a>
+<a href="#contato" class="btn-primary">
+Atendimento
+</a>
 
-    </div>
+</div>
 
 </header>
 
 <section class="hero">
 
-    <div class="container">
+<div class="container">
 
-        <div class="hero-content">
+<div class="hero-content">
 
-            <div class="hero-badge">
-                Auto Peças • Performance • Qualidade
-            </div>
+<div class="hero-badge">
+Consulta Veicular • Histórico • Informações pela placa
+</div>
 
-            <h1>
-                Peças automotivas para diversos modelos
-            </h1>
+<h1>
+Consulte veículos pela placa com rapidez e segurança
+</h1>
 
-            <p>
-                Trabalhamos com peças automotivas, acessórios e componentes para veículos nacionais e importados.
-            </p>
+<p>
+Saber o histórico de um veículo nunca foi tão fácil. Consulte pela placa e receba informações detalhadas de forma prática e rápida.
+</p>
 
-            <div class="hero-buttons">
+<div class="hero-buttons">
 
-                <a href="#servicos" class="btn-primary">
-                    Ver Produtos
-                </a>
+<a href="#servicos" class="btn-primary">
+Ver Serviços
+</a>
 
-                <a href="#contato" class="btn-outline">
-                    Fale Conosco
-                </a>
+<a href="#contato" class="btn-outline">
+Fale Conosco
+</a>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <section id="sobre">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>Sobre</span>
+<span>Sobre</span>
 
-            <h2>
-                Soluções em peças automotivas
-            </h2>
+<h2>
+Soluções em consultas veiculares
+</h2>
 
-            <p>
-                A FULL TURBOS oferece atendimento especializado e variedade em peças e acessórios automotivos.
-            </p>
+<p>
+Plataforma especializada em consultas automotivas e informações veiculares.
+</p>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <section id="servicos">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>Produtos</span>
+<span>Serviços</span>
 
-            <h2>
-                O que você encontra
-            </h2>
+<h2>
+O que você pode consultar
+</h2>
 
-        </div>
+</div>
 
-        <div class="cards">
+<div class="cards">
 
-            <div class="card">
+<div class="card">
 
-                <div class="icon">01</div>
+<div class="icon">01</div>
 
-                <h3>Peças Automotivas</h3>
+<h3>Consulta pela Placa</h3>
 
-                <p>
-                    Peças para motor, suspensão, freios e diversos sistemas automotivos.
-                </p>
+<p>
+Consulte veículos utilizando apenas a placa e receba informações completas rapidamente.
+</p>
 
-            </div>
+</div>
 
-            <div class="card">
+<div class="card">
 
-                <div class="icon">02</div>
+<div class="icon">02</div>
 
-                <h3>Acessórios</h3>
+<h3>Histórico Veicular</h3>
 
-                <p>
-                    Acessórios automotivos e componentes para personalização e desempenho.
-                </p>
+<p>
+Verifique informações importantes relacionadas ao histórico e situação do veículo.
+</p>
 
-            </div>
+</div>
 
-            <div class="card">
+<div class="card">
 
-                <div class="icon">03</div>
+<div class="icon">03</div>
 
-                <h3>Atendimento Especializado</h3>
+<h3>Atendimento Online</h3>
 
-                <p>
-                    Suporte e atendimento para informações sobre peças e compatibilidade.
-                </p>
+<p>
+Atendimento rápido e suporte para consultas e informações institucionais.
+</p>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <section id="dados" class="info-section">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>Dados Corporativos</span>
+<span>Dados Corporativos</span>
 
-            <h2>
-                Informações da empresa
-            </h2>
+<h2>
+Informações da empresa
+</h2>
 
-        </div>
+</div>
 
-        <div class="info-grid">
+<div class="info-grid">
 
-            <div class="info-box">
+<div class="info-box">
 
-                <h3>Dados Empresariais</h3>
+<h3>Dados Empresariais</h3>
 
-                <p>Empresa: FULL TURBOS</p>
-                <p>Situação: Ativa</p>
-                <p>Segmento: Auto Peças Automotivas</p>
+<p>Empresa: Detetive Veicular</p>
+<p>Situação: Ativa</p>
 
-            </div>
+</div>
 
-            <div class="info-box">
+<div class="info-box">
 
-                <h3>Endereço</h3>
+<h3>Endereço</h3>
 
-                <p>
-                    Rua Dona Margarida, 227
-                </p>
+<p>
+Avenida Rui Barbosa, 574
+</p>
 
-                <p>
-                    Bairro: Navegantes
-                </p>
+<p>
+Bairro: Centro
+</p>
 
-                <p>
-                    Município: Porto Alegre - Rio Grande do Sul
-                </p>
+<p>
+Município: Aguaí - São Paulo
+</p>
 
-                <p>
-                    CEP: 90240-611
-                </p>
+<p>
+CEP: 13860-043
+</p>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <section id="contato">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <span>Contato</span>
+<span>Contato</span>
 
-            <h2>
-                Fale com nossa equipe
-            </h2>
+<h2>
+Atendimento institucional
+</h2>
 
-            <p>
-                Entre em contato para informações, atendimento e suporte.
-            </p>
+<p>
+Entre em contato para consultas, suporte e informações.
+</p>
 
-        </div>
+</div>
 
-        <div class="contact-grid">
+<div class="contact-grid">
 
-            <div class="contact-card">
+<div class="contact-card">
 
-                <h3>Telefone</h3>
+<h3>Telefone</h3>
 
-                <p>
-                    (51) 3342-1344
-                </p>
+<p>
+(19) 99365-4343 (Whatsapp)
+</p>
 
-            </div>
+</div>
 
-            <div class="contact-card">
+<div class="contact-card">
 
-                <h3>E-mail</h3>
+<h3>E-mail</h3>
 
-                <p>
-                    societario@etecla.com.br
-                </p>
+<p>
+sp.aguai@autovisao.com
+</p>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-        <div class="form-box">
+<div class="form-box">
 
-            <form id="contactForm">
+<form id="contactForm">
 
-                <div class="form-grid">
+<div class="form-grid">
 
-                    <div class="form-group">
-                        <input type="text" placeholder="Nome completo" required>
-                    </div>
+<div class="form-group">
+<input type="text" placeholder="Nome completo" required>
+</div>
 
-                    <div class="form-group">
-                        <input type="email" placeholder="E-mail" required>
-                    </div>
+<div class="form-group">
+<input type="email" placeholder="E-mail" required>
+</div>
 
-                    <div class="form-group full">
-                        <textarea placeholder="Digite sua mensagem"></textarea>
-                    </div>
+<div class="form-group full">
+<textarea placeholder="Digite sua mensagem"></textarea>
+</div>
 
-                    <div class="form-group full">
-                        <button type="submit" class="btn-primary">
-                            Enviar Mensagem
-                        </button>
-                    </div>
+<div class="form-group full">
+<button type="submit" class="btn-primary">
+Enviar Mensagem
+</button>
+</div>
 
-                </div>
+</div>
 
-            </form>
+</form>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 <footer>
 
-    <div class="container">
+<div class="container">
 
-        <div class="copy">
+<div class="copy">
 
-            © 2026 FULL TURBOS AUTO PEÇAS. Todos os direitos reservados.
+© 2026 Detetive Veicular. Todos os direitos reservados.
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </footer>
 
@@ -674,13 +695,13 @@ footer{
 
 window.addEventListener('scroll', function(){
 
-    const header = document.querySelector('header');
+const header = document.querySelector('header');
 
-    if(window.scrollY > 50){
-        header.style.background = '#000';
-    }else{
-        header.style.background = 'rgba(0,0,0,.92)';
-    }
+if(window.scrollY > 50){
+header.style.background = '#050505';
+}else{
+header.style.background = 'rgba(5,5,5,.85)';
+}
 
 });
 
@@ -688,11 +709,11 @@ const form = document.getElementById('contactForm');
 
 form.addEventListener('submit', function(e){
 
-    e.preventDefault();
+e.preventDefault();
 
-    alert('Mensagem enviada com sucesso!');
+alert('Mensagem enviada com sucesso!');
 
-    form.reset();
+form.reset();
 
 });
 
