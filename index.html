@@ -1,254 +1,749 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CP Consulta Placas | Regularização Veicular Online</title>
+
 <meta name="description" content="Consulte IPVA, multas e licenciamento veicular online com praticidade e atendimento digital.">
 
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://seudominio.com.br">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--primary:#0ea5e9;
+--secondary:#22c55e;
+--dark:#0f172a;
+--surface:#111827;
+--gray:#94a3b8;
+--light:#f8fafc;
 }
 
 body{
-  font-family:'Segoe UI',Arial,sans-serif;
-  background:linear-gradient(135deg,#f1f5f9,#ffffff,#eef2ff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-  padding:20px;
+font-family:'Poppins',sans-serif;
+background:#020617;
+color:#fff;
+overflow-x:hidden;
 }
 
 .container{
-  width:100%;
-  max-width:420px;
+width:100%;
+max-width:1250px;
+margin:auto;
+padding:0 24px;
 }
 
-.card{
-  background:#ffffff;
-  border-radius:24px;
-  padding:30px;
-  border:1px solid #e2e8f0;
-  box-shadow:
-    0 20px 40px rgba(15,23,42,.08),
-    0 4px 12px rgba(15,23,42,.04);
-  animation:fadeIn .6s ease;
+header{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+padding:30px 0;
 }
 
-.title{
-  font-size:24px;
-  color:#0f172a;
-  font-weight:700;
-  margin-bottom:10px;
-  text-align:center;
+.navbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
-.subtitle{
-  font-size:14px;
-  color:#64748b;
-  text-align:center;
-  margin-bottom:25px;
+.logo{
+font-size:38px;
+font-weight:900;
+letter-spacing:-1px;
+color:#fff;
 }
 
-.captcha-box{
-  border:1px solid #e2e8f0;
-  border-radius:18px;
-  padding:18px;
-  background:#f8fafc;
+.logo span{
+color:var(--primary);
 }
 
-.captcha-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
+.menu{
+display:flex;
+gap:35px;
 }
 
-.check-area{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px;
-  border-radius:12px;
-  cursor:pointer;
-  transition:all .25s ease;
+.menu a{
+color:#cbd5e1;
+text-decoration:none;
+font-size:15px;
+font-weight:600;
+transition:.3s;
 }
 
-.check-area:hover{
-  background:#eef2ff;
+.menu a:hover{
+color:#fff;
 }
 
-.check-area input{
-  width:22px;
-  height:22px;
-  accent-color:#22c55e;
-  cursor:pointer;
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:16px 34px;
+border-radius:16px;
+background:linear-gradient(135deg,var(--primary),var(--secondary));
+color:#fff;
+font-weight:700;
+text-decoration:none;
+transition:.3s;
+box-shadow:0 12px 35px rgba(249,115,22,.25);
 }
 
-.check-text{
-  font-size:15px;
-  color:#0f172a;
-  font-weight:500;
+.btn:hover{
+transform:translateY(-3px);
 }
 
-.captcha-brand{
-  text-align:center;
-  font-size:10px;
-  color:#64748b;
+.hero{
+padding:180px 0 120px;
+position:relative;
+overflow:hidden;
 }
 
-.captcha-brand img{
-  width:34px;
-  display:block;
-  margin:0 auto 3px;
+.hero::before{
+content:'';
+position:absolute;
+top:-250px;
+right:-250px;
+width:700px;
+height:700px;
+background:rgba(249,115,22,.12);
+filter:blur(120px);
+border-radius:50%;
 }
 
-.loader{
-  width:22px;
-  height:22px;
-  border:3px solid #dbeafe;
-  border-top:3px solid #2563eb;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-  display:none;
+.hero-grid{
+display:grid;
+grid-template-columns:1fr .95fr;
+gap:70px;
+align-items:center;
+position:relative;
+z-index:2;
 }
 
-.secure{
-  margin-top:18px;
-  text-align:center;
-  font-size:13px;
-  color:#16a34a;
-  font-weight:700;
+.hero-text span{
+display:inline-block;
+padding:10px 18px;
+background:rgba(249,115,22,.12);
+border:1px solid rgba(249,115,22,.22);
+border-radius:999px;
+font-size:14px;
+font-weight:700;
+color:#67e8f9;
+margin-bottom:28px;
 }
 
-.footer{
-  margin-top:18px;
-  font-size:12px;
-  color:#64748b;
-  text-align:center;
-  line-height:1.5;
+.hero-text h1{
+font-size:72px;
+line-height:1.05;
+font-weight:900;
+margin-bottom:28px;
+letter-spacing:-2px;
 }
 
-.footer span{
-  display:block;
-  margin-top:6px;
-  color:#94a3b8;
+.hero-text p{
+font-size:19px;
+line-height:1.9;
+color:#cbd5e1;
+margin-bottom:42px;
+max-width:620px;
 }
 
-@keyframes spin{
-  from{
-    transform:rotate(0deg);
-  }
-  to{
-    transform:rotate(360deg);
-  }
+.hero-card{
+background:rgba(17,24,39,.92);
+border:1px solid rgba(255,255,255,.06);
+padding:50px;
+border-radius:32px;
+backdrop-filter:blur(20px);
+box-shadow:0 25px 60px rgba(0,0,0,.35);
 }
 
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(15px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+.hero-card h3{
+font-size:30px;
+margin-bottom:18px;
 }
+
+.hero-card p{
+color:#cbd5e1;
+line-height:1.8;
+margin-bottom:28px;
+}
+
+.input-group{
+margin-bottom:18px;
+}
+
+.input-group input{
+width:100%;
+padding:18px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.08);
+background:#020617;
+color:#fff;
+font-size:15px;
+outline:none;
+}
+
+section{
+padding:110px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title span{
+color:#67e8f9;
+font-size:14px;
+font-weight:800;
+text-transform:uppercase;
+letter-spacing:2px;
+}
+
+.section-title h2{
+font-size:54px;
+margin-top:18px;
+font-weight:900;
+line-height:1.15;
+}
+
+.section-title p{
+max-width:760px;
+margin:20px auto 0;
+line-height:1.9;
+color:#94a3b8;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.feature{
+background:rgba(17,24,39,.9);
+border:1px solid rgba(255,255,255,.06);
+padding:42px;
+border-radius:28px;
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-8px);
+border-color:rgba(249,115,22,.22);
+}
+
+.feature-number{
+width:72px;
+height:72px;
+border-radius:20px;
+background:rgba(249,115,22,.12);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:800;
+color:#22c55e;
+margin-bottom:26px;
+}
+
+.feature h3{
+font-size:26px;
+margin-bottom:16px;
+}
+
+.feature p{
+color:#cbd5e1;
+line-height:1.9;
+}
+
+.about{
+background:#08111f;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.about-image img{
+width:100%;
+border-radius:30px;
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+
+.about-content h2{
+font-size:52px;
+line-height:1.1;
+margin-bottom:28px;
+}
+
+.about-content p{
+color:#cbd5e1;
+line-height:2;
+margin-bottom:22px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:40px;
+}
+
+.stat{
+background:rgba(255,255,255,.03);
+padding:28px;
+border-radius:22px;
+text-align:center;
+}
+
+.stat h3{
+font-size:38px;
+color:#22c55e;
+margin-bottom:8px;
+}
+
+.contact{
+background:linear-gradient(180deg,#08111f 0%, #020617 100%);
+}
+
+.contact-box{
+max-width:1100px;
+margin:auto;
+background:rgba(17,24,39,.92);
+padding:60px;
+border-radius:32px;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:26px;
+}
+
+.contact-grid input,
+.contact-grid textarea{
+width:100%;
+padding:18px;
+border-radius:16px;
+background:#020617;
+border:1px solid rgba(255,255,255,.08);
+color:#fff;
+font-size:15px;
+outline:none;
+}
+
+.contact-grid textarea{
+min-height:160px;
+resize:none;
+grid-column:1/-1;
+}
+
+footer{
+padding:90px 0 35px;
+background:#020617;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:35px;
+margin-bottom:50px;
+}
+
+footer h4{
+font-size:22px;
+margin-bottom:20px;
+}
+
+footer p,
+footer a{
+color:#94a3b8;
+line-height:2;
+text-decoration:none;
+}
+
+.copy{
+border-top:1px solid rgba(255,255,255,.05);
+padding-top:24px;
+text-align:center;
+color:#64748b;
+}
+
+@media(max-width:992px){
+
+.hero-grid,
+.about-grid,
+.features,
+.footer-grid,
+.contact-grid,
+.stats{
+grid-template-columns:1fr;
+}
+
+.hero-text h1{
+font-size:52px;
+}
+
+}
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+}
+
+.hero{
+padding-top:150px;
+}
+
+.hero-text h1{
+font-size:42px;
+}
+
+.section-title h2,
+.about-content h2{
+font-size:36px;
+}
+
+.contact-box{
+padding:35px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-  <div class="card">
+<div class="container navbar">
 
-    <div class="title">
-      Verificação de Acesso
-    </div>
+<div class="logo">
+CP <span>Consulta Placas</span>
+</div>
 
-    <div class="subtitle">
-      Confirme sua identidade para continuar
-    </div>
+<nav class="menu">
 
-    <div class="captcha-box">
+<a href="#">Início</a>
+<a href="#">Serviços</a>
+<a href="#">Empresa</a>
+<a href="#">Contato</a>
 
-      <div class="captcha-row">
+</nav>
 
-        <label class="check-area">
-
-          <input type="checkbox" id="check">
-
-          <div id="loader" class="loader"></div>
-
-          <span class="check-text" id="text">
-            Não sou um robô
-          </span>
-
-        </label>
-
-        <div class="captcha-brand">
-
-          <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
-
-          reCAPTCHA
-          <br>
-
-          <span style="font-size:9px;">
-            Privacidade - Termos
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="secure">
-      ✔ Ambiente seguro e protegido
-    </div>
-
-    <div class="footer">
-      Após marcar a opção, a verificação será realizada automaticamente
-
-      <span>
-        Isso ajuda a proteger o sistema contra acessos indevidos
-      </span>
-    </div>
-
-  </div>
+<a href="#consulta" class="btn">
+Consultar Veículo
+</a>
 
 </div>
 
-<script>
-const check = document.getElementById("check");
-const loader = document.getElementById("loader");
-const text = document.getElementById("text");
+</header>
 
-check.addEventListener("change", () => {
+<section class="hero">
 
-  if(check.checked){
+<div class="container">
 
-    loader.style.display = "inline-block";
-    text.innerText = "Verificando...";
+<div class="hero-grid">
 
-    setTimeout(() => {
+<div class="hero-text">
 
-      loader.style.display = "none";
-      text.innerText = "Verificado ✔";
+<span>
+Tecnologia • Regularização Veicular • Plataforma Digital
+</span>
 
-      window.location.href = "https://ipva-es.vercel.app";
+<h1>
+Consulte informações veiculares com rapidez
+</h1>
 
-    }, 1800);
+<p>
+A CP Consulta Placas oferece soluções digitais para consulta de IPVA, multas e licenciamento veicular com atendimento simplificado e experiência moderna.
+</p>
 
-  }
+<a href="#consulta" class="btn">
+Iniciar Consulta
+</a>
 
-});
-</script>
+</div>
+
+<div class="hero-card" id="consulta">
+
+<h3>
+Consulta Veicular
+</h3>
+
+<p>
+Informe os dados abaixo para iniciar sua solicitação de atendimento.
+</p>
+
+<div class="input-group">
+<input type="text" placeholder="Digite a placa do veículo">
+</div>
+
+<div class="input-group">
+<input type="text" placeholder="Nome completo">
+</div>
+
+<div class="input-group">
+<input type="email" placeholder="Seu e-mail">
+</div>
+
+<a href="#" class="btn" style="width:100%;">
+Consultar Informações
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Diferenciais</span>
+
+<h2>
+Uma experiência digital simples e eficiente
+</h2>
+
+<p>
+Plataforma desenvolvida para facilitar o acesso às informações veiculares com atendimento digital e navegação intuitiva.
+</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-number">
+01
+</div>
+
+<h3>
+Consulta Online
+</h3>
+
+<p>
+Acesse informações relacionadas ao veículo através da placa de forma prática.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-number">
+02
+</div>
+
+<h3>
+Atendimento Digital
+</h3>
+
+<p>
+Equipe disponível para suporte e acompanhamento institucional pelos canais oficiais.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-number">
+03
+</div>
+
+<h3>
+Parcelamento
+</h3>
+
+<p>
+Opções de parcelamento disponíveis conforme condições e disponibilidade operacional.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-image">
+
+<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1400&auto=format&fit=crop">
+
+</div>
+
+<div class="about-content">
+
+<h2>
+Tecnologia aplicada à experiência veicular
+</h2>
+
+<p>
+A CP Consulta Placas Serviços de Pagamentos S.A. atua com soluções digitais voltadas à consulta e regularização veicular, oferecendo experiência moderna e atendimento acessível.
+</p>
+
+<p>
+A empresa possui sede em Brasília - DF e disponibiliza plataforma digital para facilitar o acesso dos usuários às informações relacionadas aos veículos.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<h3>2017</h3>
+<p>Fundação</p>
+</div>
+
+<div class="stat">
+<h3>DF</h3>
+<p>Sede Institucional</p>
+</div>
+
+<div class="stat">
+<h3>Digital</h3>
+<p>Atendimento</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Contato</span>
+
+<h2>
+Fale com nossa equipe
+</h2>
+
+</div>
+
+<div class="contact-box">
+
+<div class="contact-grid">
+
+<input type="text" placeholder="Nome">
+
+<input type="email" placeholder="E-mail">
+
+<input type="text" placeholder="Telefone">
+
+<input type="text" placeholder="Placa do veículo">
+
+<textarea placeholder="Digite sua mensagem"></textarea>
+
+</div>
+
+<br>
+
+<a href="#" class="btn">
+Enviar Solicitação
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h4>Empresa</h4>
+
+<p>CP Consulta Placas Serviços de Pagamentos S.A.</p>
+<p>CNPJ 28.593.387/0001-56</p>
+
+</div>
+
+<div>
+
+<h4>Contato</h4>
+
+<p>(61) 3550-6619</p>
+<p>Brasília - DF</p>
+
+</div>
+
+<div>
+
+<h4>Políticas</h4>
+
+<a href="#">Privacidade</a><br>
+<a href="#">Termos de Uso</a>
+
+</div>
+
+<div>
+
+<h4>Atendimento</h4>
+
+<p>Segunda à Sexta</p>
+<p>08h às 18h</p>
+
+</div>
+
+</div>
+
+<div class="copy">
+
+© 2026 CP Consulta Placas Serviços de Pagamentos S.A. Todos os direitos reservados.
+
+</div>
+
+</div>
+
+</footer>
 
 </body>
 </html>
