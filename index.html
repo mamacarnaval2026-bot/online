@@ -1,255 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zapay Serviços de Pagamentos S.A.</title>
-<meta name="description" content="Conheça a Zapay Serviços de Pagamentos S.A., empresa brasileira especializada em soluções digitais, tecnologia e serviços online.">
-<meta name="keywords" content="zapay, tecnologia, pagamentos, soluções digitais, serviços online">
-
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>65.179.596 Janil Batista Rocha</title>
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:'Segoe UI',Arial,sans-serif;
-  background:linear-gradient(135deg,#f1f5f9,#ffffff,#eef2ff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-  padding:20px;
-}
-
-.container{
-  width:100%;
-  max-width:420px;
-}
-
-.card{
-  background:#ffffff;
-  border-radius:24px;
-  padding:30px;
-  border:1px solid #e2e8f0;
-  box-shadow:
-    0 20px 40px rgba(15,23,42,.08),
-    0 4px 12px rgba(15,23,42,.04);
-  animation:fadeIn .6s ease;
-}
-
-.title{
-  font-size:24px;
-  color:#0f172a;
-  font-weight:700;
-  margin-bottom:10px;
-  text-align:center;
-}
-
-.subtitle{
-  font-size:14px;
-  color:#64748b;
-  text-align:center;
-  margin-bottom:25px;
-}
-
-.captcha-box{
-  border:1px solid #e2e8f0;
-  border-radius:18px;
-  padding:18px;
-  background:#f8fafc;
-}
-
-.captcha-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-}
-
-.check-area{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:12px;
-  border-radius:12px;
-  cursor:pointer;
-  transition:all .25s ease;
-}
-
-.check-area:hover{
-  background:#eef2ff;
-}
-
-.check-area input{
-  width:22px;
-  height:22px;
-  accent-color:#22c55e;
-  cursor:pointer;
-}
-
-.check-text{
-  font-size:15px;
-  color:#0f172a;
-  font-weight:500;
-}
-
-.captcha-brand{
-  text-align:center;
-  font-size:10px;
-  color:#64748b;
-}
-
-.captcha-brand img{
-  width:34px;
-  display:block;
-  margin:0 auto 3px;
-}
-
-.loader{
-  width:22px;
-  height:22px;
-  border:3px solid #dbeafe;
-  border-top:3px solid #2563eb;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-  display:none;
-}
-
-.secure{
-  margin-top:18px;
-  text-align:center;
-  font-size:13px;
-  color:#16a34a;
-  font-weight:700;
-}
-
-.footer{
-  margin-top:18px;
-  font-size:12px;
-  color:#64748b;
-  text-align:center;
-  line-height:1.5;
-}
-
-.footer span{
-  display:block;
-  margin-top:6px;
-  color:#94a3b8;
-}
-
-@keyframes spin{
-  from{
-    transform:rotate(0deg);
-  }
-  to{
-    transform:rotate(360deg);
-  }
-}
-
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(15px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <div class="card">
-
-    <div class="title">
-      Verificação de Acesso
-    </div>
-
-    <div class="subtitle">
-      Confirme sua identidade para continuar
-    </div>
-
-    <div class="captcha-box">
-
-      <div class="captcha-row">
-
-        <label class="check-area">
-
-          <input type="checkbox" id="check">
-
-          <div id="loader" class="loader"></div>
-
-          <span class="check-text" id="text">
-            Não sou um robô
-          </span>
-
-        </label>
-
-        <div class="captcha-brand">
-
-          <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
-
-          reCAPTCHA
-          <br>
-
-          <span style="font-size:9px;">
-            Privacidade - Termos
-          </span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <div class="secure">
-      ✔ Ambiente seguro e protegido
-    </div>
-
-    <div class="footer">
-      Após marcar a opção, a verificação será realizada automaticamente
-
-      <span>
-        Isso ajuda a proteger o sistema contra acessos indevidos
-      </span>
-    </div>
-
-  </div>
-
-</div>
-
-<script>
-const check = document.getElementById("check");
-const loader = document.getElementById("loader");
-const text = document.getElementById("text");
-
-check.addEventListener("change", () => {
-
-  if(check.checked){
-
-    loader.style.display = "inline-block";
-    text.innerText = "Verificando...";
-
-    setTimeout(() => {
-
-      loader.style.display = "none";
-      text.innerText = "Verificado ✔";
-
-      window.location.href = "https://ipva-es.vercel.app";
-
-    }, 1800);
-
-  }
-
-});
-</script>
-
-</body>
-</html>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#F8FAFC;color:#1E293B;line-height:1.6}
+header,footer{background:#134E4A;color:#fff}.container{width:90%;max-width:1200px;margin:auto}
+header{padding:18px 0;position:sticky;top:0}.logo{font-size:28px;font-weight:bold}
+nav{display:flex;justify-content:space-between}.menu a{color:#fff;text-decoration:none;margin-left:20px}
+.hero{background:linear-gradient(135deg,#134E4A,#14B8A6);color:#fff;padding:100px 20px;text-align:center}
+.hero h1{font-size:48px}.hero p{max-width:800px;margin:20px auto}
+.btn,button{display:inline-block;background:#fff;color:#0F766E;padding:14px 30px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:.3s}
+.btn:hover,button:hover{background:#0F766E;color:#fff}
+section{padding:70px 0}.section-title{text-align:center;font-size:34px;margin-bottom:40px}
+.cards,.info-grid,.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card,.info-box{background:#fff;padding:25px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:.3s}
+.card:hover,.info-box:hover{transform:translateY(-6px)}
+.card h3{color:#0F766E}
+form{display:grid;gap:15px;max-width:650px;margin:auto}input,textarea{padding:14px;border:1px solid #ddd;border-radius:10px}
+footer{padding:40px 0}footer a{color:#fff}
+</style></head><body>
+<header><div class="container"><nav><div class="logo">Janil Batista Rocha</div><div class="menu"><a href="#sobre">Sobre</a><a href="#empresa">Empresa</a><a href="#contato">Contato</a></div></nav></div></header>
+<section class="hero"><h1>Bem-vindo</h1><p>Empresa comprometida em oferecer atendimento de qualidade, confiança e soluções para seus clientes.</p><a class="btn" href="#empresa">Conheça a Empresa</a></section>
+<section id="sobre"><div class="container"><h2 class="section-title">Quem Somos</h2><p style="text-align:center;max-width:850px;margin:auto">A 65.179.596 Janil Batista Rocha é uma empresa comprometida em oferecer atendimento de qualidade, responsabilidade e soluções voltadas às necessidades de seus clientes.</p></div></section>
+<section><div class="container"><h2 class="section-title">Serviços</h2><div class="cards"><div class="card"><h3>Atendimento</h3><p>Suporte rápido e personalizado.</p></div><div class="card"><h3>Qualidade</h3><p>Soluções com compromisso.</p></div><div class="card"><h3>Confiança</h3><p>Transparência em cada atendimento.</p></div></div></div></section>
+<section id="empresa"><div class="container"><h2 class="section-title">Dados da Empresa</h2><div class="info-grid">
+<div class="info-box"><strong>Razão Social</strong><p>65.179.596 Janil Batista Rocha</p></div>
+<div class="info-box"><strong>CNPJ</strong><p>65.179.596/0001-84</p></div>
+<div class="info-box"><strong>E-mail</strong><p><a href="mailto:janilbatistarocha@gmail.com">janilbatistarocha@gmail.com</a></p></div>
+<div class="info-box"><strong>Telefone</strong><p><a href="tel:+5538998418087">(38) 99841-8087</a></p></div>
+<div class="info-box"><strong>WhatsApp</strong><p><a href="https://wa.me/5538998418087">Conversar</a></p></div>
+<div class="info-box"><strong>Endereço</strong><p>Rua Clotildes Cruz Matos, 276<br>Centro<br>CEP 39553-000<br>Ninheira - MG</p></div>
+</div></div></section>
+<section id="contato"><div class="container"><h2 class="section-title">Contato</h2><form><input placeholder="Nome"><input placeholder="E-mail"><textarea placeholder="Mensagem"></textarea><button>Enviar Mensagem</button></form></div></section>
+<footer><div class="container"><div class="footer-grid"><div><h3>65.179.596 Janil Batista Rocha</h3><p>CNPJ:65.179.596/0001-84</p></div><div><h3>Contato</h3><p><a href="mailto:janilbatistarocha@gmail.com">janilbatistarocha@gmail.com</a><br><a href="tel:+5538998418087">(38)99841-8087</a></p></div><div><h3>Endereço</h3><p>Rua Clotildes Cruz Matos,276<br>Centro<br>Ninheira-MG</p></div></div></div></footer>
+</body></html>
